@@ -1,31 +1,32 @@
 import React, { useState } from 'react';
-import ReactDOM from "react-dom";
+import './NavBar.css';
 import { Icon, Button, Sidebar, Menu, Segment, Header, Image, Grid } from 'semantic-ui-react';
 import { Link, Link as RouterLink } from 'react-router-dom'
 
+const style = <link rel="stylesheet" href= 'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.1/dist/semantic.min.css' />
 
 const NavBar = () => {
-    // const [visible, setVisible] = useState<boolean>(false);
-    
+    const [visible, setVisible] = useState(false);
+
     return (
-        <Grid columns={1}>
-        {/* <Grid.Column>
-          <Checkbox
-            checked={visible}
-            label={{ children: <code>visible</code> }}
-            onChange={() => setVisible(!visible)}
-          />
-        </Grid.Column> */}
-        <Grid.Column>
+        <div>
+        <Button.Group>
+            <Button disabled={visible} onClick={() => setVisible(true)}>
+                Show Sidebar
+            </Button>
+            <Button disabled={!visible} onClick={() => setVisible(true)}>
+                Hide Sidebar
+            </Button>
+        </Button.Group>
             <Sidebar.Pushable as={Segment}>
                 <Sidebar
                     as={Menu}
                     animation='overlay'
                     icon='labeled'
                     inverted
-                    // onHide={() => setVisible(false)}
+                    onHide={() => setVisible(false)}
                     vertical
-                    visible
+                    visible={visible}
                     width="thin"
                 >
                     <Menu.Item>
@@ -53,9 +54,10 @@ const NavBar = () => {
                     </Segment>
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
-        </Grid.Column>
-    </Grid>
+        </div>
     )
 }
 
-export default NavBar;
+export default () => (
+    <div className="dimScreen">{style}<NavBar /></div>
+);
