@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Card, Rating, Button, Image } from 'semantic-ui-react'
+// import '../imgs';
 import ReactDOM from "react-dom";
+import Cart from './Cart'
 
 
 export type ItemProps = {
@@ -10,22 +12,25 @@ export type ItemProps = {
     // amount: number;
     size: string;
     description?: string;
-    image?: String;
+    image?: string;
     rating: number;
 }
 
 
 const ItemCard = (item: ItemProps) => {
+    const [cartValue, setCartValue] = useState(0)
     const [itemAmount, setItemAmount] = useState(1)
     const [hover, setHover] = useState(false)
     
     return(
         <Card>
-            <Image src={item.image} wrapped ui={false}/>
+            {/* <Image src={(item.image!)} alt="image did not load" width="400" height="500" wrapped ui={false}/>
+             */}
+             <img src={item.image} alt="did not load"/>
             <Card.Content>
                 <Card.Header>{item.name}</Card.Header>
                 <Card.Meta>
-                   <span className='date'>{item.size} ({item.price})</span> 
+                   <span className='date'>{item.size} (${item.price})</span> 
                 </Card.Meta>
                 <Card.Description>
                     {item.description}
