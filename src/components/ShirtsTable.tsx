@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Grid, Header } from 'semantic-ui-react';
 import ItemCard from './ItemCard';
+import NavBar from './NavBar';
 
 const shirtData: {    
     id: number,
@@ -19,7 +20,8 @@ const shirtData: {
 const ShirtsTable = () => {
     return (
         <>
-        <Header as="h2">SHIRTS</Header>
+        <NavBar />
+            <Header as="h2">SHIRTS</Header>
             <Grid columns={3} divided>
                 <Grid.Row>
                     {shirtData.map((shirt) => (

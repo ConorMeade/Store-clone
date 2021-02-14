@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Grid, Header } from 'semantic-ui-react';
 import ItemCard from './ItemCard';
+import NavBar from './NavBar';
 
 
 
@@ -20,6 +21,7 @@ const shoeData: {
 const ShoesTable = () => {
     return (
         <>
+        <NavBar />
             <Header as="h2">SHOES</Header>
             <Grid columns={3} divided>
                 <Grid.Row>

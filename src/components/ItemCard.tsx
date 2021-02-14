@@ -26,7 +26,7 @@ const ItemCard = (item: ItemProps) => {
         <Card>
             {/* <Image src={(item.image!)} alt="image did not load" width="400" height="500" wrapped ui={false}/>
              */}
-             <img src={item.image} alt="did not load"/>
+             <img src={item.image} height="300" width="300" alt="did not load"/>
             <Card.Content>
                 <Card.Header>{item.name}</Card.Header>
                 <Card.Meta>

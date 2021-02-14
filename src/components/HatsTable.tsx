@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import { Grid, Header } from 'semantic-ui-react';
 import ItemCard from './ItemCard';
+import NavBar from './NavBar';
 
 const hatData: {    
     id: number,
@@ -25,6 +26,7 @@ const hatData: {
 const HatsTable = () => {
     return (
         <>
+        <NavBar />
             <Header as="h2">HATS</Header>
             <Grid columns={3} divided>
                 <Grid.Row>

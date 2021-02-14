@@ -9,8 +9,14 @@ interface CartProps {
     isOpen: Boolean;
 }
 
+// maintain cart state when we change pages
+
 const Cart = (props: CartProps) => {
     const [showModal, setShowModal] = useState(false)
+
+
+
+
 
 }
 
